@@ -1,0 +1,25 @@
+# --- Obsidian workspace state (per-machine, churns constantly) ---
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# Keep the useful shared config (themes, plugins, app settings) tracked,
+# but ignore anything that could hold secrets or is purely local.
+
+# --- Gemini Scribe: local/session/secret data ---
+.obsidian/plugins/*/data.json
+gemini-scribe/Agent-Sessions/
+gemini-scribe/Background-Tasks/
+gemini-scribe/Scheduled-Tasks/Runs/
+gemini-scribe/Scheduled-Tasks/scheduled-tasks-state.json
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# --- Trash ---
+.trash/
+.obsidian/trash/
