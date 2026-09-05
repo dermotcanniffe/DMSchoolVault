@@ -24,6 +24,7 @@ Turn on Obsidian's built-in **Templates** plugin so you can drop these in with o
 - [[03 - Templates/Session Prep|Session Prep]] — plan a game night
 - [[03 - Templates/Quest|Quest / Adventure]] — a goal with hooks and stakes
 - [[03 - Templates/Setting Seed|Setting Seed]] — turn a one-line idea into a place
+- [[03 - Templates/Stat Block Boxout|Stat Block Boxout]] — a collapsible stat block to paste into any note
 
 > [!tip] Filling the blanks
 > Don't have an answer for a slot? Leave it or write `TBD`. A half-filled template is still miles ahead of nothing. For any of these you can ask the AI helper to fill them in — see [[02 - Reference/Using AI Helpers|Using AI Helpers]].

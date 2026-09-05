@@ -1,0 +1,424 @@
+/* RPG Dice Roller Plugin Styles */
+
+.dice-builder-container {
+	--dice-control-height: 28px;
+	--dice-radius: 5px;
+	--dice-border: var(--background-modifier-border);
+	--dice-surface: var(--background-secondary);
+	--dice-surface-hover: var(--background-modifier-hover);
+	--dice-accent: var(--interactive-accent);
+	--dice-accent-hover: var(--interactive-accent-hover);
+
+	padding: 10px;
+	overflow-y: auto;
+}
+
+.dice-builder-title {
+	margin-top: 0;
+	margin-bottom: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+/* Formula Display */
+.dice-formula-display {
+	background-color: var(--dice-surface);
+	border: 1px solid var(--dice-border);
+	border-left: 3px solid var(--dice-accent);
+	border-radius: var(--dice-radius);
+	padding: 6px 6px 6px 8px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+}
+
+.dice-formula-text {
+	font-family: var(--font-monospace);
+	font-size: 0.95em;
+	font-weight: 500;
+	color: var(--text-normal);
+	flex: 1;
+	overflow-wrap: anywhere;
+}
+
+.dice-clear-button {
+	min-height: 26px;
+	background-color: var(--background-secondary-alt);
+	color: var(--text-muted);
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	padding: 2px 8px;
+	cursor: pointer;
+	font-size: 0.85em;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.dice-clear-button:hover {
+	background-color: var(--dice-surface-hover);
+	color: var(--text-normal);
+	border-color: var(--dice-accent);
+}
+
+/* Sections */
+.dice-buttons-section,
+.dice-modifier-section,
+.dice-advdis-section,
+.dice-action-section,
+.dice-suggestions-section {
+	margin-bottom: 12px;
+}
+
+.dice-buttons-section h5,
+.dice-modifier-section h5,
+.dice-advdis-section h5,
+.dice-suggestions-section h5 {
+	margin-top: 0;
+	margin-bottom: 6px;
+	font-size: 0.82em;
+	font-weight: 600;
+	color: var(--text-muted);
+	letter-spacing: 0;
+}
+
+/* Dice Rows */
+.dice-row {
+	display: grid;
+	grid-template-columns: 50px minmax(42px, 1fr) 34px 34px;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 5px;
+}
+
+.dice-modifier-section .dice-row {
+	grid-template-columns: minmax(50px, 1fr) 34px 34px;
+}
+
+.dice-advdis-section .dice-row {
+	grid-template-columns: 1fr 1fr;
+}
+
+.dice-quantity-input,
+.dice-modifier-input {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+	height: var(--dice-control-height);
+	padding: 2px 6px;
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	background-color: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 0.9em;
+}
+
+.dice-label {
+	font-weight: 600;
+	min-width: 0;
+	color: var(--text-normal);
+	font-size: 0.9em;
+}
+
+.dice-add-button,
+.dice-subtract-button {
+	height: var(--dice-control-height);
+	min-width: 0;
+	padding: 0;
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.9em;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.dice-add-button {
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+	border-color: var(--dice-accent);
+}
+
+.dice-add-button:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent-hover);
+}
+
+.dice-subtract-button {
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+}
+
+.dice-subtract-button:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent);
+}
+
+/* Common Modifiers */
+.common-modifiers {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex-wrap: wrap;
+	margin-top: 6px;
+}
+
+.common-label {
+	font-size: 0.85em;
+	color: var(--text-muted);
+}
+
+.common-modifier-button {
+	min-height: 26px;
+	padding: 2px 8px;
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 0.85em;
+	transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.common-modifier-button:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent);
+}
+
+/* Toggle Buttons */
+.dice-toggle-button {
+	flex: 1;
+	min-height: 30px;
+	padding: 5px 8px;
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.9em;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.dice-toggle-button:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent);
+}
+
+.dice-toggle-button.active {
+	background-color: var(--dice-accent);
+	color: var(--text-on-accent);
+	border-color: var(--dice-accent);
+}
+
+/* Action Buttons */
+.dice-action-section {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	border-top: 1px solid var(--dice-border);
+	padding-top: 10px;
+}
+
+.dice-action-button {
+	min-height: 30px;
+	padding: 5px 10px;
+	border: 1px solid var(--dice-border);
+	border-left: 3px solid var(--dice-accent);
+	border-radius: var(--dice-radius);
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 0.9em;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.dice-action-button:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent);
+}
+
+/* Suggestions */
+.dice-suggestions-section {
+	border-top: 1px solid var(--dice-border);
+	padding-top: 10px;
+}
+
+.dice-no-suggestions {
+	color: var(--text-muted);
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.dice-suggestions-list {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.dice-suggestion-item {
+	padding: 6px;
+	border: 1px solid var(--dice-border);
+	border-radius: var(--dice-radius);
+	background-color: var(--dice-surface);
+	cursor: pointer;
+	transition: background-color 120ms ease, border-color 120ms ease;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 6px;
+}
+
+.dice-suggestion-item:hover {
+	background-color: var(--dice-surface-hover);
+	border-color: var(--dice-accent);
+}
+
+.dice-suggestion-left {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1;
+	min-width: 0;
+	cursor: pointer;
+	padding: 2px;
+	border-radius: 3px;
+}
+
+.dice-suggestion-formula {
+	font-family: var(--font-monospace);
+	font-weight: 600;
+	color: var(--text-normal);
+	overflow-wrap: anywhere;
+}
+
+.dice-suggestion-source {
+	font-size: 0.8em;
+	color: var(--text-muted);
+	margin-left: 6px;
+	white-space: nowrap;
+}
+
+.dice-suggestion-add-btn {
+	min-height: 28px;
+	padding: 2px 10px;
+	border: 1px solid var(--dice-accent);
+	border-radius: var(--dice-radius);
+	background-color: var(--dice-surface);
+	color: var(--text-normal);
+	cursor: pointer;
+	font-size: 0.85em;
+	font-weight: 600;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+	white-space: nowrap;
+}
+
+.dice-suggestion-add-btn:hover {
+	background-color: var(--dice-accent);
+	color: var(--text-on-accent);
+}
+
+.dice-suggestion-add-btn:active {
+	background-color: var(--dice-accent-hover);
+}
+
+/* About Section in Settings */
+.dice-roller-about {
+	padding: 12px;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 5px;
+	margin-top: 12px;
+}
+
+.dice-roller-about p {
+	margin: 8px 0;
+	color: var(--text-normal);
+}
+
+.dice-roller-about ul {
+	margin-left: 20px;
+	color: var(--text-muted);
+}
+
+.dice-roller-about li {
+	margin: 4px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.dice-builder-container {
+		padding: 8px;
+	}
+
+	.dice-row {
+		grid-template-columns: 48px minmax(40px, 1fr) 34px 34px;
+	}
+
+	.dice-action-section {
+		gap: 6px;
+	}
+}
+
+/* Make ROLL syntax stand out with custom class */
+.markdown-preview-view code.dice-roll-syntax,
+.markdown-rendered code.dice-roll-syntax {
+	background-color: var(--background-secondary);
+	color: var(--text-normal);
+	font-weight: 700;
+	padding: 1px 6px 2px;
+	border-radius: 4px;
+	cursor: pointer;
+	border: 1px solid var(--interactive-accent);
+	border-left-width: 3px;
+	transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+	display: inline-block;
+	font-size: 0;
+	line-height: 1.35;
+}
+
+.markdown-preview-view code.dice-roll-syntax:hover,
+.markdown-rendered code.dice-roll-syntax:hover {
+	background-color: var(--background-modifier-hover);
+	border-color: var(--interactive-accent-hover);
+}
+
+.markdown-preview-view code.dice-roll-syntax::before,
+.markdown-rendered code.dice-roll-syntax::before {
+	content: "ROLL";
+	margin-right: 5px;
+	color: var(--text-muted);
+	font-size: 0.72rem;
+	font-family: var(--font-interface);
+	font-weight: 700;
+	letter-spacing: 0;
+	vertical-align: 0.04em;
+}
+
+.markdown-preview-view code.dice-roll-syntax::after,
+.markdown-rendered code.dice-roll-syntax::after {
+	content: attr(data-formula);
+	font-size: 0.9rem;
+	font-family: var(--font-monospace);
+}
+
+.dice-roll-clickable {
+	cursor: pointer;
+	transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+@supports (background: color-mix(in srgb, red, white)) {
+	.markdown-preview-view code.dice-roll-syntax,
+	.markdown-rendered code.dice-roll-syntax {
+		background-color: color-mix(in srgb, var(--interactive-accent) 14%, var(--background-secondary));
+		border-color: color-mix(in srgb, var(--interactive-accent) 70%, var(--background-modifier-border));
+	}
+
+	.markdown-preview-view code.dice-roll-syntax:hover,
+	.markdown-rendered code.dice-roll-syntax:hover {
+		background-color: color-mix(in srgb, var(--interactive-accent) 20%, var(--background-secondary));
+		border-color: var(--interactive-accent-hover);
+	}
+}
