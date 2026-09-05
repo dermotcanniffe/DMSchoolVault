@@ -35,19 +35,72 @@ Give it a vibe or a monster name and it hands back a complete, table-ready stat 
 
 You mentioned a **FoundryVTT** world with an **MCP plugin**, and hoping to pull random stat blocks from it. Here's the honest state of it:
 
-**What's true right now:**
-- Gemini Scribe *does* support MCP (Model Context Protocol) servers — the mechanism that would let it talk to your Foundry MCP plugin.
-- But in this vault it's currently **turned off**. In the plugin's data it shows `mcpEnabled: false` with no servers configured.
+The bridge is **[foundry-vtt-mcp](https://github.com/adambdooley/foundry-vtt-mcp)** by Adam Dooley. It's officially built for Claude Desktop, but under the hood its MCP server is a standard local **stdio** process — and Gemini Scribe can spawn that same process instead. So we can drive your Foundry world from Gemini Scribe directly.
 
-**To try connecting it (you'll need to do this in Obsidian, I can't click it from here):**
-1. In Gemini Scribe settings, find the **MCP** section and enable it.
-2. Add your FoundryVTT MCP server. You'll need the connection details from your Foundry MCP plugin — usually a URL/port (often something like `http://localhost:PORT`) and possibly a key. Check that plugin's docs/settings for the exact address.
-3. Make sure FoundryVTT is **running** and the MCP plugin is active when you try — if Foundry is closed, the connection will just fail.
-4. Reconnect/restart the server in the Gemini Scribe MCP panel, then ask the Stat Block Generator something like "pull a random NPC stat block from my Foundry world."
+### How the pieces fit
+```
+Gemini Scribe (Obsidian)  →  spawns  →  Foundry MCP server (node, stdio)
+      →  WebSocket  →  "Foundry MCP Bridge" module  →  your Foundry world
+```
+- The MCP server doesn't care which app launches it, so Gemini Scribe works in place of Claude Desktop.
+- The bridge's "needs Claude Pro" note only applies to *Claude Desktop* — going through Gemini Scribe sidesteps that entirely.
 
-**If it doesn't connect** (very possible — this depends entirely on your Foundry MCP plugin's setup, which I can't see or test from here):
-- No problem. The **Stat Block Generator** above works fully on its own and will invent a correct stat block from scratch. You lose nothing except the "pull from my existing world" convenience.
-- If you want, tell me the name/docs of the Foundry MCP plugin you installed and I can help you work out the exact connection settings.
+### What you need in place
+1. **Foundry module:** in Foundry, install the "Foundry MCP Bridge" module and **enable** it in Module Management. (You must be logged in as the **GM** — the bridge only talks to a GM user.)
+2. **MCP server on disk:** the node server that Gemini Scribe will launch. The **manual install** gives the cleanest known path:
+   ```
+   git clone https://github.com/adambdooley/foundry-vtt-mcp.git
+   cd foundry-vtt-mcp
+   npm install
+   npm run build
+   ```
+   After this, the server lives at:
+   `foundry-vtt-mcp/packages/mcp-server/dist/index.js`
+   > If you used the Windows *installer* instead, it configured things for Claude Desktop and may not expose this path cleanly. For the Gemini Scribe route, the manual clone/build above is the reliable option. Note the full path to `index.js` — you'll need it below.
+3. **Node.js 18+** installed and on your PATH (the `node` command must work in a terminal).
 
-> [!note] Why I can't just wire it up for you
-> The MCP connection, the API key, and enabling these agents all happen inside Obsidian's UI and depend on live services (Gemini's API, your running Foundry). I've created every file they use and given you the exact steps, but those buttons are yours to click.
+### Wiring it into Gemini Scribe (stdio server)
+In Obsidian → Settings → **Gemini Scribe**:
+1. Turn on **Show advanced settings** (the MCP section only appears when this is on).
+2. Scroll to **MCP servers** and toggle **Enable MCP servers** on.
+3. Click **Add server** and choose Transport = **Stdio (local process)**.
+4. Fill it in:
+   - **Name:** `foundry`
+   - **Command:** `node`
+   - **Arguments** (one per line):
+     ```
+     C:\full\path\to\foundry-vtt-mcp\packages\mcp-server\dist\index.js
+     ```
+   - **Environment variables** (one `KEY=VALUE` per line):
+     ```
+     FOUNDRY_HOST=localhost
+     FOUNDRY_PORT=31415
+     ```
+     (These are the bridge's defaults. If your Foundry runs on a different port, use that instead.)
+5. Click **Test connection**. If Foundry is running with the module enabled, it should discover the tools (get-character, search-compendium, dnd5e-create-npc, list-creatures-by-criteria, and more).
+6. Set **tool trust**: leave read-only tools (searching, reading characters) trusted for convenience, and keep anything that *writes* to your world (create-actor, manage-actors, update-token) **untrusted** so it asks before changing your live game.
+7. Save.
+
+> [!warning] Order of operations matters
+> Start **Foundry first** (world loaded, logged in as GM, module enabled), *then* let Gemini Scribe connect. If Foundry isn't up, Test connection will fail — that's expected, just start Foundry and retry. Config changes need the server toggled off/on (or a plugin restart) to take effect.
+
+### Using it
+Open the Gemini Scribe agent, pick the **Stat Block Generator** or **DM Math & Rules Helper**, and ask things like:
+- "Find all CR 5 humanoids in my Foundry compendium."
+- "Pull my character Scabs's stats from Foundry."
+- "Create an NPC acolyte in my Foundry world, easy fight for level 2."
+
+The agent will call the Foundry tools when the request needs live world data, and fall back to generating from scratch when it doesn't.
+
+### If it won't connect
+This is a chain of live services (Node, Foundry, the module, the socket), so if a link is down it won't work. Checklist:
+- Is **Foundry running** with the world loaded and you logged in as **GM**?
+- Is the **Foundry MCP Bridge module enabled** (and showing connected in its settings)?
+- Does `node "C:\...\dist\index.js"` run in a terminal without errors?
+- Is the **port** right (`FOUNDRY_PORT`) — match it to your Foundry?
+- Turn on **Debug mode** in Gemini Scribe for detailed MCP logs.
+
+**Fallback:** even with none of this, the **Stat Block Generator works on its own** and invents correct stat blocks from scratch. You only lose the "read from my existing world" part.
+
+> [!note] What's yours to do vs mine
+> I researched the exact setup and wrote these steps, but the install (git/npm), the Foundry module, the Gemini API key, and clicking through the MCP settings all happen on your machine in live apps I can't reach from here. If Test connection fails, paste me the Debug log and I'll help you read it.
