@@ -1,14 +1,14 @@
-﻿---
+---
 type: course-week
-week: 4
+week: 6
 status: not-started
 topic: 
 due: 
 ---
 
-# Week 04 — {Topic}
+# Week 06 — {Topic}
 
-⬅ [[00 - DM School/Weeks/Week 03|Prev Week]] · ➡ [[00 - DM School/Weeks/Week 05|Next Week]]
+⬅ [[00 - DM School/Weeks/Week 05|Prev Week]] · ➡ [[00 - DM School/Weeks/Week 07|Next Week]]
 
 ## 📌 This week at a glance
 - **Topic:** 

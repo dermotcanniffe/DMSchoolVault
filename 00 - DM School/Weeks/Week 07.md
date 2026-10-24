@@ -8,7 +8,7 @@ due:
 
 # Week 07 — {Topic}
 
-⬅ [[00 - DM School/Weeks/Week 06|Prev Week]] · ➡ [[00 - DM School/Weeks/Week 08|Next Week]]
+⬅[[Week 06 - 30-minute-missions|Prev Week]]] · ➡ [[00 - DM School/Weeks/Week 08|Next Week]]
 
 ## 📌 This week at a glance
 - **Topic:** 

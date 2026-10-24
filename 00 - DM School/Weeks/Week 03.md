@@ -8,7 +8,7 @@ due:
 
 # Week 03 — NPC Primer
 
-⬅ [[00 - DM School/Weeks/Week 02|Prev Week]] · ➡ [[00 - DM School/Weeks/Week 04|Next Week]]
+⬅ [[00 - DM School/Weeks/Week 02|Prev Week]] · ➡[[Week 04 - PC Primer|Next Week]]]
 
 ## 📌 This week at a glance
 - **Topic:** NPCs — building a point of view, objective, and a trust "trigger"

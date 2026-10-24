@@ -1,4 +1,4 @@
-﻿---
+---
 type: course-week
 week: 10
 status: not-started

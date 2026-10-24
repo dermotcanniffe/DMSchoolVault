@@ -1,4 +1,4 @@
-﻿---
+---
 type: course-week
 week: 5
 status: not-started
@@ -8,7 +8,7 @@ due:
 
 # Week 05 — {Topic}
 
-⬅ [[00 - DM School/Weeks/Week 04|Prev Week]] · ➡ [[00 - DM School/Weeks/Week 06|Next Week]]
+⬅[[Week 04 - PC Primer|Prev Week]]] · ➡ [[Week 06 - 30-minute-missions|Next Week]]
 
 ## 📌 This week at a glance
 - **Topic:** 
