@@ -1,10 +1,10 @@
-**Campaign Pitch 
+** Campaign Pitch 
 
 Dream Wars
 Every night, when certain people sleep, they fall prey to Dream Stealers - oligarchs who can afford the expensive tech necessary to invade others' dreams and drain them of oneiric energy. The victims suffer dream trauma, night after night. They are combatted by the Dream Guard. 
 
 
-**Six Traits 
+** Six Traits 
   
 - 1. Victims can only withstand 6 attacks by Dream Stealers before being irreparably harmed
 - 2. The more they destroy dreams their dreamers, the more the boundaries of reality break down
@@ -13,13 +13,13 @@ Every night, when certain people sleep, they fall prey to Dream Stealers - oliga
 - 5. Combat results in psychic injury.   
 - 6. Advantage earned by the Dream Guard makes the environment friendlier to them, Advantage to a Dream Stealer makes the environment harsher for Dream Guard. 
   
-**Three Locations 
+** Three Locations 
 
 1. The Associative Palace - each door leads to a different dream reality. Those who are capable can move between dreams, and dreamed worlds, past and present. 
 2. Under The Bed - a mustering place for Dream Stealer "daemons" before deploying to victim dreams
 3. The Real World - those who operate in dreams spend less and less time here, making it seem unreal. 
 
-**Macro-Lore 
+** Macro-Lore 
 
 Money, technology, and power are inextricably linked in this crumbling society. The Dream Authority was established as a global regulatory body to criminalize oneiric harvesting and protect citizens, but it is paralyzed by extreme corruption and bureaucratic loopholes. The world’s wealthiest predators operate entirely extra-judicially, hiding their physical bodies in fortified private archipelagos, sovereign oceanic seasteads, and heavily guarded bunker-estates. Because they are physically untouchable by traditional law enforcement, the only place to hunt them is within the dream world itself.
 
