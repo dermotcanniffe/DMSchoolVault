@@ -25,8 +25,4 @@ Money, technology, and power are inextricably linked in this crumbling society. 
 
 For the global populace, sleep is no longer a sanctuary; it is a hunting ground. A victim can withstand only six extractions before suffering permanent psychic death, leaving behind a hollow, catatonic husk in the real world. Now, entire city sectors are succumbing to a psychic epidemic. Because the destruction of dreams actively breaks down the walls of reality, the Stealers’ nightmarish "daemons" are beginning to bleed into physical metropolitan areas, causing mass waking hallucinations and structural anomalies.
 
-<<<<<<< HEAD
 The Dream Guard is vastly outgunned. The Stealers use their massive real-world wealth to pre-program hostile dream environments, meaning the Guard must fight through weaponized nightmares where the very landscape works against them. With reality decaying, historic dreamforms must be employed to bolster the Guard's dwindling numbers and make a decisive strike against the Stealers and their technology. 
-=======
-The Dream Guard is vastly outgunned. The Stealers use their massive real-world wealth to pre-program hostile dream environments, meaning the Guard must fight through weaponized nightmares where the very landscape works against them. With reality decaying, historic dreamforms being bought out by oligarchs, and the general public terrified to close their eyes, the Guard must strike fast. If they cannot sever the Stealers' tethers within the Associative Palace, the waking world will dissolve into a permanent, corporate-owned nightmare.
->>>>>>> 13847373a58a4a1b5990279babda08255c300f49
