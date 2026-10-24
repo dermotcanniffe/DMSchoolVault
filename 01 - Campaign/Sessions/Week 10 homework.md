@@ -2,7 +2,7 @@
 
 Dream Wars:
 
-Every night, when certain people sleep, they fall prey to Dream Stealers - oligarchs who can afford the expensive tech necessary to invade others' dreams and drain them of oneiric energy. The victims suffer dream trauma, night after night. They are combatted by the Dream Guard. 
+Every night, when certain people sleep, they fall prey to Dream Stealers - oligarchs who can afford the expensive tech necessary to invade others' dreams and drain them of oneiric energy. The victims suffer dream trauma, night after night. The only thing that can stop them is the Dream Guard. 
 
 
 ** Six Traits 
